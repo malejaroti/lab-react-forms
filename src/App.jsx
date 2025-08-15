@@ -6,6 +6,7 @@ import StudentCard from "./components/StudentCard";
 
 import studentsData from "./assets/students.json";
 const MIN_GRADUATION_YEAR = 2023;
+
 function App() {
   const [students, setStudents] = useState(studentsData);
   const [fullName, setFullName] = useState("");
