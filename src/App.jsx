@@ -17,6 +17,20 @@ function App() {
   const [graduationYear, setGraduationYear] = useState( MIN_GRADUATION_YEAR);
   const [graduated, setGraduated] = useState(false);
 
+  const handleAddStudent = (event) => {
+    event.preventDefault()
+
+    const newStudent = {
+      fullName: fullName,
+      email:email ,
+      phone: phone,
+      program: program,
+      image: image ,
+      graduationYear:graduationYear ,
+      graduated: graduated,
+    }
+    setStudents([...students, newStudent])
+  }
   
 
   return (
@@ -79,7 +93,7 @@ function App() {
             <input name="graduated" type="checkbox" value={graduated} onChange ={e => setGraduated(e.target.value)}/>
           </label>
 
-          <button type="submit">Add Student</button>
+          <button type="submit" onClick={handleAddStudent}>Add Student</button>
         </div>
 
       </form>
