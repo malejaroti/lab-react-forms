@@ -5,10 +5,18 @@ import TableHeader from "./components/TableHeader";
 import StudentCard from "./components/StudentCard";
 
 import studentsData from "./assets/students.json";
-
+const MIN_GRADUATION_YEAR = 2023;
 function App() {
   const [students, setStudents] = useState(studentsData);
+  const [fullName, setFullName] = useState("");
+  const [image, setImage] = useState("");
+  const [phone, setPhone] = useState(0);
+  const [email, setEmail] = useState("");
+  const [program, setProgram] = useState("");
+  const [graduationYear, setGraduationYear] = useState( MIN_GRADUATION_YEAR);
+  const [graduated, setGraduated] = useState(false);
 
+  
 
   return (
     <div className="App pt-20">
@@ -58,7 +66,7 @@ function App() {
               placeholder="Graduation Year"
               minLength={4}
               maxLength={4}
-              min={2023}
+              min={ MIN_GRADUATION_YEAR}
               max={2030}
             />
           </label>
